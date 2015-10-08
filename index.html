@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html lang="ca" ng-app="vidapp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable=no>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="css/reproductor.css"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+
+
+</head>
+
+<body ng-controller="global">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">SAM-ICE</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#/colleccio/tots">Continguts</a></li>
+                    <li><a href="#/formats">Formats</a></li>
+                    <li><a href="#">Contacte</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div ng-view></div>
+    
+    <script type="text/javascript" src="js/vidapp.js"></script>
+    <script type="text/javascript" src="js/vLoader.js"></script>
+</body>
+
+
+
+</html>

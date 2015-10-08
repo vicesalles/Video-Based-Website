@@ -1,0 +1,20 @@
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <!--fer un NG-REPEAT AMB TOTS ELS VÍDEOS-->
+        <h1>{{titol}}</h1>
+        <div ng-repeat="vid in videos" class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img ng-src="../vids/{{vid.poster}}" alt="{{vid.titol}}">
+                <div class="caption">
+                    <h3>{{vid.titol}}</h3>
+                    <p>{{vid.descripcio}}</p>
+                    <p><a ng-href="#/vid/{{vid.slug}}" class="btn btn-primary" role="button">Veure</a></p>
+                </div>
+            </div>
+        </div>        
+        
+    </div>
+</div>
