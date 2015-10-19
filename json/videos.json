@@ -4,6 +4,7 @@
             "titol": "Videomemòria UAB 14-15",
             "categoria": "",
             "slug": "vMemoria1415",
+            "host":"",
             "url": "vids",
             "poster": "",
             "descripcio": "Videomemòria del curs 2014-2015 a la Universitat Autònoma de Barcelona"
@@ -12,6 +13,7 @@
             "titol": "Dissabtes del Dret",
             "categoria": "",
             "slug": "disDret1415",
+            "host":"",
             "url": "vids",
             "poster": "",
             "descripcio": "Vídeo promocional sobre l'activitat realitzada a la Facultat de Dret durant l'any 2014"
@@ -20,6 +22,7 @@
             "titol": "",
             "categoria": "",
             "slug": "",
+            "host":"",
             "url": "",
             "poster": "",
             "descripcio": ""
@@ -28,6 +31,7 @@
             "titol": "Cathy Yule",
             "categoria": "3q",
             "slug": "3QCathyYule",
+            "host":"",
             "url": "vids",
             "poster": "",
             "descripcio": "Cathy Yule, ecòloga aquàtica Australiana, és professora de la Facultat de Ciències de la Universitat de Monash, a Malàisia. Especialitzada en la biologia dels boscos de pantans de torba, ha viscut en aquell país al llarg dels darrers 18 anys i ha fet aportacions científiques destacades en el camp de l’ecologia aquàtica tropical, des que va començar la seva tesi doctoral sobre l’illa Bougainville, a Papua Nova Guinea."
@@ -35,9 +39,19 @@
             "titol": "Materials Nanoporosos",
             "categoria": "neo",
             "slug": "NEOnanoPo",
+            "host":"",
             "url": "vids",
             "poster": "",
             "descripcio": "Els doctors Jordi Sort i Eva Pellicer del Grup de Materials Avançats per a la Nanoenginyeria, Nanomecànica i Nanomagnetisme del Departament de Física de la UAB ens mostren l'impacte que poden arribar a tenir els seus descobriments"
+        },
+        {
+            "titol": "Creart Carles Pujol",
+            "categoria": "",
+            "slug": "PxIUp2VBV1A",
+            "host":"yt",
+            "url": "",
+            "poster": "",
+            "descripcio": ""
         }
               ]
 }

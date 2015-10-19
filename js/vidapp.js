@@ -19,14 +19,28 @@ app.config(function ($routeProvider) {
 
     .when('/vid/:id', {
 
-        templateUrl: './pgs/vid.html',
-        controller: 'vid'
+            templateUrl: './pgs/vid.html',
+            controller: 'vid'
+
+        })
+        .when('/formats/', {
+
+            templateUrl: './pgs/formats.html',
+            controller: 'formats'
+
+        })
+
+    .when('/yt/', {
+
+        templateUrl: './pgs/yt.html',
+        controller: 'yt'
 
     })
-    .when('/formats/', {
 
-        templateUrl: './pgs/formats.html',
-        controller: 'formats'
+    .when('/ytpl/:id', {
+
+        templateUrl: './pgs/ytPlayer.html',
+        controller: 'ytPlayer'
 
     })
 
@@ -78,9 +92,19 @@ app.controller('vid', ['$scope', '$rootScope', '$route', '$routeParams', 'vLoade
 
 
 
-
 }]);
 
+app.controller('ytPlayer', ['$scope', '$rootScope', '$route', '$routeParams', 'constants', function ($scope, $rootScope, $route, $routeParams, constants) {
+
+    var id = $routeParams.id;
+    if(id==""){id="8bp1hEmEBp4"}
+   // var url = "http://www.youtube.com/embed/" + id + "?autoplay=1&autohide=1&controls=0& modestbranding=1&showinfo=0&theme=light";
+    document.getElementById('ytPlayer').src = "http://www.youtube.com/embed/" + id + "?autoplay=1&autohide=1&controls=1& modestbranding=1&showinfo=0&theme=light";
+//    $scope.url = url ;
+
+
+
+}]);
 
 app.service('constants', ['$rootScope', function ($rootScope) {
 
@@ -175,5 +199,55 @@ app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'vLoa
         rPrincipal.width = constants.amplada;
 
     });
+
+}]);
+
+app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants) {
+
+    $scope.titol;
+    $scope.descripcio;
+    $scope.vids;
+    $scope.resposta;
+
+    $http({
+        method: 'GET',
+        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLTpjkUeSQjGf4RRJQOpqnDHJdzhRakl8w&key=AIzaSyC_pmYWHZy-D5jbilEMRkhglZsoAeUTsDY'
+    }).then(function successCallback(response) {
+        console.log(response.data);
+
+        var r = response.data.items;
+        var vids = [];
+
+
+        for (i = 0; i < r.length; i++) {
+
+            var vid = {};
+
+            vid.titol = r[i].snippet.title;
+            vid.titol = vid.titol.replace('3Q', '');
+            vid.id = r[i].snippet.resourceId.videoId;
+            vid.thmb = r[i].snippet.thumbnails.high.url;
+            vid.descripcio = r[i].snippet.description;
+            if(vid.descripcio==""){
+            
+            vid.descripcio ="A UAB celeb host";
+            
+            }
+
+
+            vids.push(vid);
+
+
+
+        }
+
+        $scope.vids = vids;
+
+    }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+    });
+
+    console.log($scope.resposta);
 
 }]);

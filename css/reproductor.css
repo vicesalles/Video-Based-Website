@@ -19,3 +19,19 @@ body {
     vertical-align: middle;
     float: none;
 }
+
+.paging-button {
+  visibility: hidden;
+}
+
+.button-container {
+  clear: both;
+}
+
+.ytPlayer{
+
+    width: 100vw;
+    height: 100vh;
+    min-width: 700px;
+
+}
