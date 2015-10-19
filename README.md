@@ -1,5 +1,5 @@
 # Video-Based-Website
-Website for videographers
+Website template for videographers
 
 This is a very basic website based on video content. The main source of video content will be a YouTube channel.
 This template is build with bootstrap and Angular js
