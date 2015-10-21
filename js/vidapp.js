@@ -30,7 +30,7 @@ app.config(function ($routeProvider) {
 
         })
 
-    .when('/yt/', {
+    .when('/yt/:col?', {
 
         templateUrl: './pgs/yt.html',
         controller: 'yt'
@@ -202,19 +202,29 @@ app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'vLoa
 
 }]);
 
-app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants) {
+app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants, gsets) {
 
+    
     $scope.titol;
     $scope.descripcio;
     $scope.vids;
     $scope.resposta;
-
+    var url;
+    
+    if(gsets.mode == 'single'){
+    
+        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+gsets.playlist+'&key='+gsets.key ;
+    
+    }else{
+    
+    
+    }
+   
     $http({
         method: 'GET',
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLTpjkUeSQjGf4RRJQOpqnDHJdzhRakl8w&key=AIzaSyC_pmYWHZy-D5jbilEMRkhglZsoAeUTsDY'
+        url: url
     }).then(function successCallback(response) {
-        console.log(response.data);
-
+       
         var r = response.data.items;
         var vids = [];
 
@@ -248,6 +258,5 @@ app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams',
         // or server returns response with an error status.
     });
 
-    console.log($scope.resposta);
 
 }]);
