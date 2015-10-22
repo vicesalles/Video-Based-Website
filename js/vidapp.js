@@ -36,6 +36,13 @@ app.config(function ($routeProvider) {
         controller: 'yt'
 
     })
+    
+    .when('/col/:col?', {
+
+        templateUrl: './pgs/col.html',
+        controller: 'coleccio'
+
+    })
 
     .when('/ytpl/:id', {
 
@@ -205,6 +212,7 @@ app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'vLoa
 app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants, gsets) {
 
     
+    $scope.titolCol;
     $scope.titol;
     $scope.descripcio;
     $scope.vids;
@@ -226,6 +234,74 @@ app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams',
     }).then(function successCallback(response) {
        
         var r = response.data.items;
+        $scope.titolCol = response.data.title;
+        var vids = [];
+
+
+        for (i = 0; i < r.length; i++) {
+
+            var vid = {};
+
+            vid.titol = r[i].snippet.title;
+            vid.titol = vid.titol.replace('3Q', '');
+            vid.id = r[i].snippet.resourceId.videoId;
+            vid.thmb = r[i].snippet.thumbnails.high.url;
+            vid.descripcio = r[i].snippet.description;
+            if(vid.descripcio==""){
+            
+            vid.descripcio ="A UAB celeb host";
+            
+            }
+
+
+            vids.push(vid);
+
+
+
+        }
+
+        $scope.vids = vids;
+
+    }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+    });
+
+
+}]);
+
+
+
+app.controller('coleccio', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants, gsets) {
+
+    $scope.titolCol;
+    $scope.titol;
+    $scope.descripcio;
+    $scope.vids;
+    $scope.resposta;
+    var url;
+    var col;
+    
+    if(gsets.mode == 'single'){
+    
+        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+gsets.playlist+'&key='+gsets.key;
+    
+    }else{
+        
+        col = $routeParms.col;
+        gsets.setPl(gsets.collections[col]);
+        url =  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+gsets.playlist+'&key='+gsets.key;    
+    
+    
+    }
+   
+    $http({
+        method: 'GET',
+        url: url
+    }).then(function successCallback(response) {
+       
+        var r = response.data.items;
+        $scope.titolCol = response.data.snippet.title;
         var vids = [];
 
 
