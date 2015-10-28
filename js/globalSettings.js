@@ -10,6 +10,9 @@ app.service('gsets', ['$http', '$rootScope', function ($http, $rootScope) {
     //Single playlist webpage
     this.playlist = "PLTpjkUeSQjGf4RRJQOpqnDHJdzhRakl8w"; //Insert your playlist ID here as a string.
 
+    //Homepage video
+    
+    this.mainVideo ='8bp1hEmEBp4';
 
     //Multiple playlists webpage
     this.collection = {

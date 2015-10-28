@@ -50,6 +50,12 @@ app.config(function ($routeProvider) {
         controller: 'ytPlayer'
 
     })
+    
+     .when('/nosaltres', {
+
+        templateUrl: './pgs/nosaltres.html'
+
+    })
 
 
 });
@@ -180,32 +186,11 @@ app.controller('colleccio', ['$scope', '$rootScope', '$route', '$routeParams', '
 }]);
 
 
-app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', function ($scope, $rootScope, $route, $routeParms, vLoader, constants) {
+app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'constants', 'gsets', function ($scope, $rootScope, $route, $routeParams, constants, gsets) {
 
+    var id = gsets.mainVideo;   
+    document.getElementById('ytPlayer').src = "http://www.youtube.com/embed/" + id + "?autoplay=1&autohide=1&controls=1& modestbranding=1&showinfo=0&theme=light";
 
-    $scope.titol;
-    $scope.descripcio;
-    //$scope.arxiu = $routeParams.id;
-    //console.log($routeParams.id);
-
-
-    $scope.arxiu = 'vMemoria1415'
-
-
-
-    video = vLoader.loadVideo($scope.arxiu);
-
-    $rootScope.$on('videoCarregat', function () {
-
-        var vid = vLoader.vid;
-        console.log(vid);
-        $scope.titol = vid.titol;
-        $scope.descripcio = vid.descripcio;
-        rPrincipal.src = "./" + vid.url + "/" + vid.slug + ".mp4";
-        //rPrincipal.muted = true;
-        rPrincipal.width = constants.amplada;
-
-    });
 
 }]);
 
@@ -290,8 +275,7 @@ app.controller('coleccio', ['$scope', '$http', '$rootScope', '$route', '$routePa
         
         col = $routeParms.col;
         gsets.setPl(gsets.collections[col]);
-        url =  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+gsets.playlist+'&key='+gsets.key;    
-    
+        url =  'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+gsets.playlist+'&key='+gsets.key;        
     
     }
    
