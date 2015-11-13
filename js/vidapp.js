@@ -194,7 +194,7 @@ app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'cons
 
 }]);
 
-app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParms, vLoader, constants, gsets) {
+app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParams, vLoader, constants, gsets) {
 
     
     $scope.titolCol;
@@ -210,7 +210,19 @@ app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams',
     
     }else{
     
+        var llista = $routeParams.col;
+        
+        var playlist = gsets.collection[llista];
+        
+        if(playlist){
     
+        url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+playlist+'&key='+gsets.key ;
+        
+            }else{
+                var playlist = gsets.collection.tots;
+                  url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId='+playlist+'&key='+gsets.key ;
+            }
+        
     }
    
     $http({

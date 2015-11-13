@@ -4,6 +4,32 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+.row
+{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+ 
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.col-md-4
+{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width:33%;
+}
+.panel {
+  width:100%;
+}
+
+
+
+
+
+
 .btn-default,
 .btn-primary,
 .btn-success,

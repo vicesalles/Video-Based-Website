@@ -15,11 +15,19 @@
 
             <div ng-repeat="vid in vids" class="col-sm-6 col-md-3">
                 <div class="thumbnail">
-                    <img ng-src="{{vid.thmb}}" alt="...">
+                  <a ng-href="#/ytpl/{{vid.id}}"><img ng-src="{{vid.thmb}}" alt="Servei Audiovisual UAB"></a>
                     <div class="caption">
                         <h3>{{vid.titol}}</h3>
-                        <p style="text-overflow: ellipsis; ">{{vid.descripcio}}
-                        <a ng-href="#/ytpl/{{vid.id}}" class="btn btn-default pull-right" role="button">Play</a></p>
+                        
+                        
+                         <div class="row">
+                        
+                        <div class="col-sm-9 col-md-9"><p>{{vid.descripcio}}</p></div>
+                        <div class="col-sm-3 col-md-3"> <a ng-href="#/ytpl/{{vid.id}}" class="btn btn-default pull-right" role="button">Play</a></div>
+                        
+                        </div>  
+                        
+                       
                     </div>
                 </div>
             </div>
