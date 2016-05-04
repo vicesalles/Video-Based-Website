@@ -56,6 +56,13 @@ app.config(function ($routeProvider) {
         templateUrl: './pgs/nosaltres.html'
 
     })
+    
+    .when('/neoFormat', {
+
+        templateUrl: './pgs/neoFormat.html'
+
+    })
+
 
 
 });
@@ -63,7 +70,7 @@ app.config(function ($routeProvider) {
 app.controller('global', ['$scope', '$rootScope', '$route', '$location', '$routeParams', 'vLoader', function ($scope, $rootScope, $route, $location, $routeParams, vLoader) {
 
 
-    $scope.vesA = function (url) {
+    this.vesA = function (url) {
 
 
         $location.url(url);
@@ -196,13 +203,21 @@ app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'cons
 
 app.controller('yt', ['$scope', '$http', '$rootScope', '$route', '$routeParams', 'vLoader', 'constants', 'gsets', function ($scope, $http, $rootScope, $route, $routeParams, vLoader, constants, gsets) {
 
-    
+    var programa = $routeParams;
     $scope.titolCol;
     $scope.titol;
     $scope.descripcio;
     $scope.vids;
     $scope.resposta;
+    $scope.neo = false;
     var url;
+    
+    console.log(programa);
+    
+    if(programa.col == '3q'){
+        
+        $scope.tresQ = true;
+    }
     
     if(gsets.mode == 'single'){
     
@@ -315,7 +330,6 @@ app.controller('coleccio', ['$scope', '$http', '$rootScope', '$route', '$routePa
             vid.descripcio ="A UAB celeb host";
             
             }
-
 
             vids.push(vid);
 
