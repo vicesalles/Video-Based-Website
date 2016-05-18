@@ -188,8 +188,10 @@ app.controller('colleccio', ['$scope', '$rootScope', '$route', '$routeParams', '
 
 app.controller('inici', ['$scope', '$rootScope', '$route', '$routeParams', 'constants', 'gsets', function ($scope, $rootScope, $route, $routeParams, constants, gsets) {
 
+ /*   just changed my mind about how the main page should be.
+ 
     var id = gsets.mainVideo;   
-    document.getElementById('ytPlayer').src = "http://www.youtube.com/embed/" + id + "?autoplay=1&autohide=1&controls=1& modestbranding=1&showinfo=0&theme=light";
+    document.getElementById('ytPlayer').src = "http://www.youtube.com/embed/" + id + "?autoplay=1&autohide=1&controls=1&modestbranding=1&showinfo=0&theme=light";*/
 
 
 }]);

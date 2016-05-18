@@ -21,7 +21,7 @@ rPrincipal.width = amplada;
 
 
 //Quan s'hagi carregat la metadata executarem això
-rPrincipal.onloadedmetadata = function(){
+rPrincipal.onloadedmetadata = function () {
 
     var temps = durada(rPrincipal);
     var hs = moment().startOf('day')
@@ -30,7 +30,7 @@ rPrincipal.onloadedmetadata = function(){
     console.log(temps);
     console.log(hs);
 
-}
+};
 
 
 //Assigno el reproductor principal al mediaGroup pPrincipal. Això em permet fer operacions que afectin tots els elements media d'aquesta pàgina.
