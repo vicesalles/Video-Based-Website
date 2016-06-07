@@ -35,3 +35,25 @@
     line-height: 4em;
 }
 
+h1{
+    font-family: 'Changa One';
+}
+
+h2{
+   font-family: 'Ubuntu mono';
+    font-weight: 700;
+}
+
+h3{
+    font-family: 'Changa One';
+}
+
+body{
+    font-family: 'Ubuntu mono';
+}
+
+.navbar-brand{
+    
+     font-family: 'Changa One';
+    
+}
