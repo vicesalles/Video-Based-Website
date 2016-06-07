@@ -1,8 +1,5 @@
-# Video Based Website
-Website template for videographers
+# Portfolio del Servei Audiovisual i Multimèdia ICE-UAB
 
-Build your personal website based on your Youtube channel. Admin the contents by editing playlists at Youtube. My aim is creating a basic template with an only configurating file.
+Portfolio website based on angular.js, bootstrap and the youtube javascript API.
 
-This template is build with bootstrap and Angular js.
 
-CAUTION : This is a very early version. It stalls as hell. Excuse me for dropping some non-english comments in the code.
