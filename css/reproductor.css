@@ -33,9 +33,18 @@ body {
     width: 100vw;
     height: 100vh;
     min-width: 700px;
-    min-height: 700px;
-    position: fixed;
-    top:0px;
-    left: 0px;
 
+}
+
+.titolContacte{
+    
+    padding-left: 1%;
+    margin-bottom: 1%;
+    
+}
+
+.titolJumbo{
+    
+    padding-left: 3%;
+    
 }

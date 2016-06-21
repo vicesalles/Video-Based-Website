@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
     <link rel="stylesheet" href="css/reproductor.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/main.css" />
     <link href='https://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
    <link rel="stylesheet" href="css/font-awesome.min.css">
+=======
+>>>>>>> origin/master
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-route.min.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -19,29 +22,47 @@
     <script type="text/javascript" src="js/moment.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="js/angular-youtube-embed.min.js"></script>
+<<<<<<< HEAD
     <title>Portfolio del Servei Audiovisual i Multimèdia de l'ICE-UAB</title>
     <!--Metas-->
+=======
+>>>>>>> origin/master
 
 
 </head>
 
-<body ng-controller="global">
+<body ng-controller="global as g">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/">SAiM-ICE</a>
-                <ul class="nav navbar-nav">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="#/">SAiM-ICE</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
                     <li><a href="#/yt/projectes">Projectes</a></li>
                     <li><a href="#/yt/3q">3Q</a></li>
-                    <li><a href="#/yt/neo">NEO</a></li>
+                    <li class="dropdown">
+                        <a href="#/neoFormat" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEO <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/yt/neoCat">Català</a></li>
+                            <li><a href="#/yt/neoCas">Castellano</a></li>
+                            <li><a href="#/yt/neo">English</a></li>                            
+                        </ul>
+                    </li>
                     <li><a href="#/nosaltres">Contacte</a></li>
                 </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 
-            </div>
-        </div>
 
-    </nav>
+
 
     <div ng-view></div>
     <footer class="footer" style="background-color:#F7D7D7; font-size:0.6em">

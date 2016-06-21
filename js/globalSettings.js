@@ -20,7 +20,7 @@ app.service('gsets', ['$http', '$rootScope', function ($http, $rootScope) {
             'neoCat': 'PLTpjkUeSQjGe1RXSY-GJjuU64BO1u2G_C',
             'neoCas': 'PLTpjkUeSQjGdb-yzhn5NzfIGlXXldeNRe',
             'neo':'PLTpjkUeSQjGe1qBP6Fm80XA1vn7172m6r',
-            'projectes':'PLTpjkUeSQjGd0-VRWZMzS7oe7VoLpD55B'
+        'projectes':'PLTpjkUeSQjGd0-VRWZMzS7oe7VoLpD55B'
     }; //If you're managing more than 1 playlist, paste them here as a key value pair: 'whatEverTextIdenfidierYouFancy' : 'UglyPlaylistId',
 
 

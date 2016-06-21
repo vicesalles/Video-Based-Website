@@ -1,23 +1,13 @@
-<!doctype html>
-<html>
+<div clas="container-fluid">
 
-<head>
-    <title>3Q</title>
-</head>
-
-<body>
-    <div class="container-fluid">
-
-        <div ng-show="tresQ">
-
-  <div class="jumbotron">
+    <div class="jumbotron">
         <div class="titolJumbo">
             <div class="row">
                 
                 <div class="col-md-4">
                     
                     
-                     <h1>3Q</h1>
+                     <h1>NEO</h1>
             <p>Audiovisuals al servei de la divulgació</p>
                     
                     
@@ -34,7 +24,13 @@
         <h2>Qui el fa possible?</h2>
         
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper est quis erat vestibulum gravida. Vivamus at interdum lorem, sit amet varius felis. Phasellus eu lectus nulla. Nullam luctus lobortis turpis, a tempor est finibus sed. Mauris vitae commodo velit. Integer nec ultrices leo. Duis pellentesque aliquam sem non fermentum. Quisque euismod mattis lorem, at efficitur leo sodales vel. Nulla sit amet purus id turpis varius congue vitae id justo.</p>
-     
+   
+   <h2>Continguts</h2>
+   
+   <div class="btn-group btn-group-lg" role="group" aria-label="...">
+  <a href="#/yt/neoCat" class="btn btn-default">Català</a>
+  <a href="#/yt/neoCas" class="btn btn-default">Castellano</button>
+  <a href="#/yt/neo" class="btn btn-default">English</a>
 </div>
    
     </div>
@@ -47,45 +43,6 @@
         </div>
     </div>
 
-        </div>
+ 
 
-    </div>
-
-
-    <div class="row">
-        <h1></h1>
-    </div>
-    <div class="row">
-
-
-        <div ng-repeat="vid in vids" class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <a ng-href="#/ytpl/{{vid.id}}"><img ng-src="{{vid.thmb}}" alt="Servei Audiovisual UAB"></a>
-                <div class="caption">
-                    <h3>{{vid.titol}}</h3>
-
-
-                    <div class="row">
-
-                        <div class="col-sm-9 col-md-9">
-                            <p>{{vid.descripcio}}</p>
-                        </div>
-                        <div class="col-sm-3 col-md-3"> <a ng-href="#/ytpl/{{vid.id}}" class="btn btn-default pull-right" role="button">Play</a></div>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/auth.js"></script>
-    <script type="text/javascript" src="./js/ytLoader.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-</body>
-
-</html>
+</div>

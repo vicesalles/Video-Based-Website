@@ -1,8 +1,7 @@
 # Video Based Website
 Website template for videographers
 
-Build your personal website based on your Youtube channel. Admin the contents by editing playlists at Youtube. My aim is creating a basic template with an only configurating file.
+This is a very basic website based on video content. The main source of video content will be a YouTube channel.
+This template is build with bootstrap and Angular js
 
-This template is build with bootstrap and Angular js.
-
-CAUTION : This is a very early version. It stalls as hell. Excuse me for dropping some non-english comments in the code.
+CAUTION : This is a very early version. It stalls as hell. 
